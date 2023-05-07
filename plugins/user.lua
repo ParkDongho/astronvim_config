@@ -1,26 +1,14 @@
 return {
-  -- You can also add new plugins here as well:
-  -- Add plugins, the lazy syntax
-  -- "andweeb/presence.nvim",
-  -- {
-  --   "ray-x/lsp_signature.nvim",
-  --   event = "BufRead",
-  --   config = function()
-  --     require("lsp_signature").setup()
-  --   end,
-  -- },
-  
   {
     "scalameta/nvim-metals",
     dependencies = {
       "nvim-lua/plenary.nvim", 
- --     "mfussenegger/nvim-dap",
+      "mfussenegger/nvim-dap",
     },
     ft = {"scala", "sbt"},
     config = function()
       
       local api = vim.api
-      local cmd = vim.cmd
       local map = vim.keymap.set
 
       ----------------------------------
@@ -39,7 +27,7 @@ return {
       map("n", "<leader>cl", vim.lsp.codelens.run)
       map("n", "<leader>sh", vim.lsp.buf.signature_help)
       map("n", "<leader>rn", vim.lsp.buf.rename)
-      map("n", "<leader>f", vim.lsp.buf.formatting)
+      --map("n", "<leader>f", vim.lsp.buf.formatting)
       map("n", "<leader>ca", vim.lsp.buf.code_action)
 
       map("n", "<leader>ws", function()
@@ -126,8 +114,7 @@ return {
               cmp.select_next_item()
             else
               fallback()
-            end
-          end,
+            end end,
           ["<S-Tab>"] = function(fallback)
             if cmp.visible() then
               cmp.select_prev_item()
