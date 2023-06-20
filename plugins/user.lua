@@ -6,6 +6,15 @@ return {
       "mfussenegger/nvim-dap",
     },
     ft = {"scala", "sbt"},
+
+    "simrat39/rust-tools.nvim", -- add lsp plugin
+    {
+      "williamboman/mason-lspconfig.nvim",
+      opts = {
+        ensure_installed = { "rust_analyzer" },
+      },
+    },
+
     config = function()
       
       local api = vim.api

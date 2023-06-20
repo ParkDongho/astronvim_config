@@ -27,6 +27,10 @@ return {
   },
 
   lsp = {
+    setup_handlers = {
+      -- add custom handler
+      rust_analyzer = function(_, opts) require("rust-tools").setup { server = opts } end
+    },
     -- customize lsp formatting options
     formatting = {
       -- control auto formatting on save
