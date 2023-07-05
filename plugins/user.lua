@@ -7,13 +7,6 @@ return {
     },
     ft = {"scala", "sbt"},
 
-    "simrat39/rust-tools.nvim", -- add lsp plugin
-    {
-      "williamboman/mason-lspconfig.nvim",
-      opts = {
-        ensure_installed = { "rust_analyzer" },
-      },
-    },
 
     config = function()
       
@@ -195,6 +188,16 @@ return {
         group = nvim_metals_group,
       })
     end,
+  },
+
+  {
+    "simrat39/rust-tools.nvim", -- add lsp plugin
+    {
+      "williamboman/mason-lspconfig.nvim",
+      opts = {
+        ensure_installed = { "rust_analyzer" },
+      },
+    },
   },
 }
 
