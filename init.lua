@@ -18,7 +18,8 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "astrodark",
+  -- astrodark, catppuccin, catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+  colorscheme = "catppuccin-latte",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -27,10 +28,6 @@ return {
   },
 
   lsp = {
-    setup_handlers = {
-      -- add custom handler
-      rust_analyzer = function(_, opts) require("rust-tools").setup { server = opts } end
-    },
     -- customize lsp formatting options
     formatting = {
       -- control auto formatting on save
