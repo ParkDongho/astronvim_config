@@ -20,17 +20,25 @@ return {
       vim.opt_global.completeopt = { "menuone", "noinsert", "noselect" }
 
       -- LSP mappings
-      map("n", "gD",  vim.lsp.buf.definition)
       map("n", "K",  vim.lsp.buf.hover)
-      map("n", "gi", vim.lsp.buf.implementation)
+
+      map("n", "<leader>uL", vim.lsp.codelens.run)
+      map("n", "<leader>lr", vim.lsp.buf.rename)
+      map("n", "<leader>uf", vim.lsp.buf.formatting)
+
+      map("n", "<leader>la", vim.lsp.buf.code_action)
+      map("n", "<leader>lh", vim.lsp.buf.signature_help)
+
+
+      map("n", "<leader>ls", vim.lsp.buf.document_symbol)
+      map("n", "<leader>lG", vim.lsp.buf.workspace_symbol)
+      -- Declaration
+      -- Type Definition
+      map("n", "gd",  vim.lsp.buf.definition)
+      map("n", "gI", vim.lsp.buf.implementation)
       map("n", "gr", vim.lsp.buf.references)
-      map("n", "gds", vim.lsp.buf.document_symbol)
-      map("n", "gws", vim.lsp.buf.workspace_symbol)
-      map("n", "<leader>cl", vim.lsp.codelens.run)
-      map("n", "<leader>sh", vim.lsp.buf.signature_help)
-      map("n", "<leader>rn", vim.lsp.buf.rename)
-      --map("n", "<leader>f", vim.lsp.buf.formatting)
-      map("n", "<leader>ca", vim.lsp.buf.code_action)
+
+
 
       map("n", "<leader>ws", function()
         require("metals").hover_worksheet()
