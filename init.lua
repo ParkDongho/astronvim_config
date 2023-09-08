@@ -19,7 +19,7 @@ return {
 
   -- Set colorscheme to use
   -- astrodark, catppuccin, catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
-  colorscheme = "catppuccin-latte",
+  colorscheme = "catppuccin-mocha",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -52,6 +52,7 @@ return {
     servers = {
       -- "pyright"
     },
+
   },
 
   -- Configure require("lazy").setup() options
